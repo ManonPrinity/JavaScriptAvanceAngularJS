@@ -9,8 +9,10 @@ app.config(function($routeProvider)
 	$routeProvider.otherwise({redirectTo: "/"});
 });
 
-app.controller("pokedex_ctrl", function($scope, $http, $routeParams)
+app.controller("pokedex_ctrl", function($scope, $http, $location, $routeParams)
 {
+	$scope.current_id = 1;
+
 	$http.get("http://pokeapi.co/api/v2/pokemon/" + $routeParams.pokemon_id).success(function(data)
 	{
 		$scope.sprite = data.sprites.front_default;
@@ -37,16 +39,41 @@ app.controller("pokedex_ctrl", function($scope, $http, $routeParams)
 			attacks += '[' + data.moves[i].move.name + "] - ";
 		$scope.attack_list = attacks;
 
+		$scope.current_id = data.id;
+
 		$scope.get_evolutions();
 	});
+
 	$scope.get_evolutions = function()
 	{
 		$http.get("http://pokeapi.co/api/v1/pokemon/" + $routeParams.pokemon_id).success(function(data)
 		{
-			$scope.pokemon_evolutions = [];
-			for (var i = 0; i < data.evolutions.length; ++i)
-				$scope.pokemon_evolutions.push({name: data.evolutions[i].to, link: "#pokedex/" + (data.evolutions[i].to).toLowerCase()});
-			console.log(data);
+			if (data.evolutions[0])
+			{
+				$scope.evolution_link = "#pokedex/" + (data.evolutions[0].to).toLowerCase();
+				$scope.evolution_name = data.evolutions[0].to;
+			}
+			else
+			{
+				$scope.evolution_link = "#pokedex/" + $routeParams.pokemon_id;
+				$scope.evolution_name = "No evolution";
+			}
 		});
 	}
+
+	$scope.previous_pokemon = function()
+	{
+		$location.path("/pokedex/" + (parseInt($scope.current_id) - 1));
+	}
+
+	$scope.next_pokemon = function()
+	{
+		$location.path("/pokedex/" + (parseInt($scope.current_id) + 1));
+	}
+
+	$scope.search_pokemon = function()
+	{
+		$location.path(("/pokedex/" + $scope.search_value).toLowerCase());
+	}
+
 });

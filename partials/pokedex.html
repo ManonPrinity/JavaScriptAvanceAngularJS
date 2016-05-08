@@ -38,8 +38,17 @@
 		<p>{{attack_list}}</p>
 	</section>
 
-	<section class="evolutions">
-		<h3>Evolutions :</h3>
-		<a ng-repeat="evolution in pokemon_evolutions" ng-href="{{evolution.link}}">{{evolution.name}}</a>
+	<section class="evolution">
+		<h3>Evolution :</h3>
+		<a ng-href="{{evolution_link}}">{{evolution_name}}</a>
 	</section>
+
+	<footer>
+		<input type="button" value="Previous" ng-click="previous_pokemon();"/>
+		<div class="search_div">
+			<input type="text" ng-model="search_value" placeholder="id or name"/>
+			<input type="button" value="Search" ng-click="search_pokemon();"/>
+		</div>
+		<input type="button" value="Next" ng-click="next_pokemon();"/>
+	</footer>
 </div>

@@ -49,9 +49,15 @@ p { margin: 0px;}
 	#pokedex_view .attack_list { display: block; box-sizing: border-box; width: 100%; padding: 16px; border-bottom: 1px solid #222;}
 		#pokedex_view .attack_list h3 { font-size: 15px; font-weight: 500;}
 		#pokedex_view .attack_list p { font-size: 14px;}
-	#pokedex_view .evolutions { display: block; box-sizing: border-box; width: 100%; padding: 16px; border-bottom: 1px solid #222;}
-		#pokedex_view .evolutions h3 { font-size: 15px; font-weight: 500;}
-		#pokedex_view .evolutions a { display: block; height: 32px; line-height: 32px; font-size: 14px; color: #fff;}
+	#pokedex_view .evolution { display: block; box-sizing: border-box; width: 100%; padding: 16px; border-bottom: 1px solid #222;}
+		#pokedex_view .evolution h3 { font-size: 15px; font-weight: 500;}
+		#pokedex_view .evolution a { display: block; height: 32px; line-height: 32px; font-size: 14px; color: #f33;}
+	#pokedex_view footer { display: block; box-sizing: border-box; width: 100%; padding: 16px; text-align: center;}
+		#pokedex_view footer > input { display: inline-block; box-sizing: border-box; vertical-align: top; width: 150px; height: 32px; padding: 0px; border: 1px solid #000; background: #333; color: #eee; cursor: pointer;}
+		#pokedex_view footer div { display: inline-block; box-sizing: border-box; vertical-align: top; height: 32px; margin: 0px 16px; padding: 0px;}
+			#pokedex_view footer div input[type="text"] { display: inline-block; box-sizing: border-box; vertical-align: top; height: 32px; padding: 8px; border: 1px solid #000;}
+			#pokedex_view footer div input[type="button"] { display: inline-block; box-sizing: border-box; vertical-align: top; height: 32px; border: 1px solid #000; cursor: pointer;}
+	
 
 #team_view {}
 	#team_view p { font-size: 14px; }
