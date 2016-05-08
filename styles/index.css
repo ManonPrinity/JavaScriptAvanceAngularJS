@@ -1,12 +1,60 @@
-@font-face { font-family: Roboto; src: url("../fnt/Roboto-Regular.ttf");}
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
 
 html { height: 100%;}
-body { height: 100%; margin: 0px; background-color: #111; color: #fff; font-size: 0px; font-family: "Roboto";}
+body { height: 100%; margin: 0px; color: #fff; font-size: 0px; font-family: "Roboto"; background-image: url("../img/bg.jpg");}
 
-h1 { margin: 0px; font-weight: normal;}
+h1, h2 { margin: 0px; font-weight: normal;}
+p { margin: 0px;}
 
-#main_header { display: block; width: 100%; height: 32px; background-color: #222;}
-	#main_header h1 { display: inline-block; vertical-align: top; box-sizing: border-box; width: 128px; height: 32px; line-height: 32px; padding-left: 32px; font-size: 16px; }
-	#main_header img { display: inline-block; vertical-align: top; width: 16px; height: 16px; margin: 8px; cursor: pointer;}
+#main_header { display: block; width: 100%; height: 32px; background-color: #333;}
+	#main_header a { display: block; width: 160px; height: 32px; line-height: 32px; font-size: 16px; text-decoration: none;}
+		#main_header a img { display: inline-block; vertical-align: top; width: 16px; height: 16px; margin: 8px; cursor: pointer;}
+		#main_header a h1 { display: inline-block; vertical-align: top; box-sizing: border-box; width: 100px; height: 32px; line-height: 32px; font-size: 16px; color: #fff;}
 
-#main_nav { display: block; }
+#main_nav { display: block; position: absolute; top: 32px; left: 0px; width: 32px; height: calc(100% - 32px); background: #222; transition: width 250ms ease;}
+#main_nav:hover { width: 128px;}
+	#main_nav a { display: block; height: 32px; border-bottom: 1px solid #1a1a1a; cursor: pointer; text-decoration: none; overflow: hidden;}
+	#main_nav a:hover { background-color: #2a2a2a;}
+		#main_nav a img { display: inline-block; box-sizing: border-box; vertical-align: top; width: 32px; height: 32px; padding: 8px;}
+		#main_nav a p { display: inline-block; vertical-align: top; width: 32px; height: 32px; line-height: 32px; font-size: 14px; color: #fff;}
+
+#main_div { display: block; width: calc(100% - 32px); height: calc(100% - 32px); margin-left: 32px; background-color: rgba(0, 0, 0, 0.9);}
+
+.view_div { display: block; box-sizing: border-box; width: 100%; height: 100%;}
+
+#home_view {}
+	#home_view h2 { padding: 16px; font-weight: 500; font-size: 32px;}
+	#home_view p { padding: 16px;  font-size: 16px;}
+		#home_view p a { text-decoration: none; color: #f33;}
+
+#pokedex_view { overflow: auto;}
+	#pokedex_view .header { display: block; width: 100%; height: 96px; border-bottom: 1px solid #222;}
+		#pokedex_view .header img { display: inline-block; vertical-align: top; box-sizing: border-box; width: 96px; height: 96px; border-right: 1px solid #222;}
+		#pokedex_view .header h2 { display: inline-block; vertical-align: top; box-sizing: border-box; width: calc(100% - 96px); height: 96px; line-height: 96px; padding-left: 16px; font-size: 16px;}
+		#pokedex_view .header h2:first-letter { text-transform: capitalize;}
+	#pokedex_view .description { display: block; box-sizing: border-box; width: 100%; padding: 16px; border-bottom: 1px solid #222;}
+		#pokedex_view .description p { font-size: 14px;}
+	#pokedex_view .types { display: block; box-sizing: border-box; width: 100%; padding: 16px; border-bottom: 1px solid #222;}
+		#pokedex_view .types h3 { font-size: 15px; font-weight: 500;}
+		#pokedex_view .types p { display: inline-block; vertical-align: top; font-size: 14px;}
+	#pokedex_view .mesures { display: block; box-sizing: border-box; width: 100%; padding: 16px; border-bottom: 1px solid #222;}
+		#pokedex_view .mesures p { display: inline-block; vertical-align: top; margin-right: 16px; font-size: 14px;}
+	#pokedex_view .talents { display: block; box-sizing: border-box; width: 100%; padding: 16px; border-bottom: 1px solid #222;}
+		#pokedex_view .talents h3 { font-size: 15px; font-weight: 500;}
+		#pokedex_view .talents p { display: inline-block; vertical-align: top; font-size: 14px;}
+	#pokedex_view .stats { display: block; box-sizing: border-box; width: 100%; padding: 16px; border-bottom: 1px solid #222;}
+		#pokedex_view .stats h3 { font-size: 15px; font-weight: 500;}
+		#pokedex_view .stats p { display: block; font-size: 14px;}
+			#pokedex_view .stats p span { font-weight: 500;}
+	#pokedex_view .attack_list { display: block; box-sizing: border-box; width: 100%; padding: 16px; border-bottom: 1px solid #222;}
+		#pokedex_view .attack_list h3 { font-size: 15px; font-weight: 500;}
+		#pokedex_view .attack_list p { font-size: 14px;}
+	#pokedex_view .evolutions { display: block; box-sizing: border-box; width: 100%; padding: 16px; border-bottom: 1px solid #222;}
+		#pokedex_view .evolutions h3 { font-size: 15px; font-weight: 500;}
+		#pokedex_view .evolutions a { display: block; height: 32px; line-height: 32px; font-size: 14px; color: #fff;}
+
+#team_view {}
+	#team_view p { font-size: 14px; }
+
+#battle_view {}
+	#battle_view p { font-size: 14px; }

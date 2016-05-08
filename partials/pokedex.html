@@ -1,0 +1,45 @@
+<div id="pokedex_view" class="view_div">
+	<section class="header">
+		<img ng-src="{{sprite}}"/>
+		<h2>{{name}}</h2>
+	</section>
+
+	<section class="description">
+		<p>Description</p>
+	</section>
+
+	<section class="types">
+		<h3>Types :</h3>
+		<p>{{types}}</p>
+	</section>
+
+	<section class="mesures">
+		<p>Height : {{height}}</p>
+		<p>Weight : {{weight}}</p>
+	</section>
+
+	<section class="talents">
+		<h3>Talents :</h3>
+		<p>{{talents}}</p>
+	</section>
+
+	<section class="stats">
+		<h3>Stats :</h3>
+		<p><span>HP :</span> {{hp}}</p>
+		<p><span>Attack :</span> {{atk}}</p>
+		<p><span>Defense :</span> {{def}}</p>
+		<p><span>Special Attack :</span> {{speatk}}</p>
+		<p><span>Special Defense :</span> {{spedef}}</p>
+		<p><span>Speed :</span> {{speed}}</p>
+	</section>
+
+	<section class="attack_list">
+		<h3>Attack List :</h3>
+		<p>{{attack_list}}</p>
+	</section>
+
+	<section class="evolutions">
+		<h3>Evolutions :</h3>
+		<a ng-repeat="evolution in pokemon_evolutions" ng-href="{{evolution.link}}">{{evolution.name}}</a>
+	</section>
+</div>

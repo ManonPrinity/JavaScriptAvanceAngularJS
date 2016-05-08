@@ -5,10 +5,13 @@
 		<title>Pokedex</title>
 		<link rel="stylesheet" type="text/css" href="styles/index.css"/>
 	</head>
-	<body ng-app="pokedex_app">
-		<header id="main_header" ng-include="'views/header.html'"></header>
+	<body ng-app="poke_app">
+		<header id="main_header" ng-include="'template/header.html'"></header>
+		<nav id="main_nav" ng-include="'template/nav.html'"></nav>
+		<div id="main_div" ng-view></div>
 
-		<script type="text/javascript" src="scripts/angular_v1.5.5.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<script type="text/javascript" src="https://code.angularjs.org/1.5.5/angular-route.min.js"></script>
 		<script type="text/javascript" src="scripts/index.js"></script>
 	</body>
 </html>
